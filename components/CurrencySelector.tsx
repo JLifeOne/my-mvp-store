@@ -26,7 +26,7 @@ export const CurrencySelector: React.FC<CurrencySelectorProps> = ({
   `;
 
   const dropdownItemBaseClasses = `
-    flex items-center w-full px-3 sm:px-4 py-2 text-left
+    flex items-center justify-center w-full px-3 sm:px-4 py-2 text-left
     text-slate-700 dark:text-slate-200 
     hover:bg-sky-100 dark:hover:bg-slate-600
     focus:outline-none focus:bg-sky-100 dark:focus:bg-slate-600
@@ -61,7 +61,7 @@ export const CurrencySelector: React.FC<CurrencySelectorProps> = ({
         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
         className={buttonBaseClasses}
       >
-        <span>{selectedCurrency.flag}</span>
+        
         <span className="hidden xs:inline">{selectedCurrency.code}</span>
         <svg
           className={`w-4 h-4 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`}
@@ -75,7 +75,7 @@ export const CurrencySelector: React.FC<CurrencySelectorProps> = ({
 
       {isDropdownOpen && (
         <div
-          className="absolute right-0 mt-2 w-32 origin-top-right bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded-md shadow-lg z-50
+          className="absolute right-0 mt-2 w-28 origin-top-right bg-white dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded-md shadow-lg z-50
                      transition-all ease-out duration-100 opacity-100 scale-100 data-[closed]:opacity-0 data-[closed]:scale-95 data-[closed]:ease-in data-[closed]:duration-75"
           data-closed={!isDropdownOpen ? "" : undefined}
           role="listbox"
@@ -94,7 +94,6 @@ export const CurrencySelector: React.FC<CurrencySelectorProps> = ({
                   className={`${dropdownItemBaseClasses} ${selectedCurrency.code === currency.code ? 'font-semibold bg-sky-50 dark:bg-slate-500' : ''}`}
                   aria-label={`Select ${currency.name}`}
                 >
-                  <span className="mr-2">{currency.flag}</span>
                   <span>{currency.code}</span>
                 </button>
               </li>
