@@ -82,7 +82,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               className="relative w-32 xs:w-40 sm:w-44 md:w-52 
                          max-w-xs lg:max-w-sm xl:max-w-md
                          transition-all duration-300 ease-in-out 
-                         md:group-hover:w-1/2 md:group-focus-within:w-1/2 mt-4" // Changed mt-3 to mt-4
+                         md:group-hover:w-1/2 md:group-focus-within:w-1/2 mt-1" // Changed mt-3 to mt-1
             >
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                 <SearchIcon className="h-4 w-4 text-slate-200/90 dark:text-slate-400/90 group-focus-within:text-sky-700 dark:group-focus-within:text-sky-300 transition-colors duration-300" />
