@@ -1,0 +1,6 @@
+{
+  "name": "My MVP Store",
+  "description": "A modern e-commerce PWA experience with AI-powered product filtering, built with React, Tailwind CSS, and Gemini API.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}

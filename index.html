@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My MVP Store</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Add Alpine.js -->
+  <script src="https://unpkg.com/alpinejs" defer></script>
+  <style>
+    /* Custom CSS for animations or complex utilities if needed */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in {
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+  </style>
+  <script>
+    // Tailwind dark mode configuration and initial setup
+    tailwind.config = {
+      darkMode: 'class', // or 'media'
+      theme: {
+        extend: {
+          screens: {
+            'xs': '475px', // Extra small breakpoint
+          },
+          colors: {
+            primary: {
+              light: '#3b82f6', // blue-500
+              DEFAULT: '#2563eb', // blue-600
+              dark: '#1d4ed8'  // blue-700
+            },
+            secondary: {
+              light: '#f3f4f6', // gray-100
+              DEFAULT: '#e5e7eb', // gray-200
+              dark: '#d1d5db'   // gray-300
+            },
+            accent: '#ec4899', // pink-500
+          },
+          aspectRatio: {
+            '4/3': '4 / 3',
+            '1/1': '1 / 1',
+            'square': '1 / 1',
+          },
+          animation: {
+            'spin-slow': 'spin 3s linear infinite',
+            'pulse-fast': 'pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'fade-in': 'fadeIn 0.6s ease-out forwards', // Register custom animation
+          },
+          keyframes: { // Register custom keyframes
+            fadeIn: {
+              '0%': { opacity: '0', transform: 'translateY(-10px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            }
+          }
+        }
+      }
+    }
+    // Apply dark mode based on localStorage or system preference
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.0.1"
+  }
+}
+</script>
+</head>
+<body class="bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 antialiased transition-colors duration-300">
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html><link rel="stylesheet" href="index.css">
+<script src="index.tsx" type="module"></script>
