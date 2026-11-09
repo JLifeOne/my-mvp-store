@@ -25,7 +25,9 @@ This document is authoritative for this repository, alongside `AGENTS.md` and an
 - [ ] Unit/contracts/build plus deployed responsive and authenticated end-to-end testing performed
 - [ ] Screenshots or recordings compared to approved phone and desktop baseline
 - [ ] SU log, project handoff and verification/limitations updated append-only
-- [ ] Owner approves merge; production deployment and rollback plan validat## Repository-specific implementation note
-Audit actual production services before planning staging; do not assume staging exists. UX.
+- [ ] Owner approves merge; production deployment and rollback plan validated
+
+## Repository-specific implementation note
+Audit actual production services before planning staging; do not assume staging exists.
 
 **Mandatory stop condition:** If staging isolation or a critical integration contract cannot be verified, preserve production and leave the feature PR open. No production merge is implied by this policy update.
